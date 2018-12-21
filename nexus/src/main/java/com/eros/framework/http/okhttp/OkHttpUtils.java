@@ -132,8 +132,7 @@ public class OkHttpUtils {
 
                     if (!finalCallback.validateReponse(response, id)) {
                         //request failed
-                        Exception failed = new HttpException(response.code(), "request failed" +
-                                response.message());
+                        Exception failed = new HttpException(response.code(),response.body().string());
                         sendFailResultCallback(call, failed, finalCallback, id);
                         return;
                     }
