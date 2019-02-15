@@ -286,16 +286,16 @@ public abstract class AbstractEditComponent extends WXComponent<WXEditText> {
 
                     mBeforeText = s.toString();
 
-                    if (!hasChangeForDefaultValue) {
-                        if (getDomObject() != null && getDomObject().getAttrs() != null) {
-                            Object val = getDomObject().getAttrs().get(Constants.Name.VALUE);
-                            String valString = WXUtils.getString(val, null);
-                            if (mBeforeText != null && mBeforeText.equals(valString)) {
-                                hasChangeForDefaultValue = true;
-                                return;
-                            }
-                        }
-                    }
+//                    if (!hasChangeForDefaultValue) {
+//                        if (getDomObject() != null && getDomObject().getAttrs() != null) {
+//                            Object val = getDomObject().getAttrs().get(Constants.Name.VALUE);
+//                            String valString = WXUtils.getString(val, null);
+//                            if (mBeforeText != null && mBeforeText.equals(valString)) {
+//                                hasChangeForDefaultValue = true;
+//                                return;
+//                            }
+//                        }
+//                    }
 
                     if (!mIgnoreNextOnInputEvent) {
                         fireEvent(Constants.Event.INPUT, s.toString());
